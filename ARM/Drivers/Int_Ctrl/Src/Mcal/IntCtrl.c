@@ -14,7 +14,6 @@
  *********************************************************************************************************************/
 #include "Std_Types.h"
 #include "IntCtrl.h"
-#include "Mcu_Hw.h"
 
 /**********************************************************************************************************************
 *  LOCAL MACROS CONSTANT\FUNCTION
@@ -53,19 +52,37 @@
 * \Return value:   : None
 *******************************************************************************/
 void IntCrtl_Init(void)
-{
+{   uint8 counter = 0;
+    uint8 priority;
 
-	/*TODO Configure Grouping\SubGrouping System in APINT register in SCB*/
-    APINT = 0xFA05|0x00001234;
-    
-    /*TODO : Assign Group\Subgroup priority in NVIC_PRIx Nvic and SCB_SYSPRIx Registers*/  
+    for (counter = 0; counter < NUM_OF_INTERRUPTS ; counter ++){
+
+        #if(PRIORITY_COMBINATION == XXX)
+            priority = (0x07) & IntCtrl_ConfigParam[counter].interruptPriority
+;
+        #elif(PRIORITY_COMBINATION == XXY);
+            priority = (0x07) & ( (IntCtrl_ConfigParam[counter].interruptPriority << 1U) | (IntCtrl_ConfigParam[counter].interruptSubPriority << 0U) )
+
+        #elif(PRIORITY_COMBINATION == XYY)
+            priority = (0x07) & ( (IntCtrl_ConfigParam[counter].interruptPriority << 2U) | (IntCtrl_ConfigParam[counter].interruptSubPriority << 0U) )
+        #else
+            priority = (0x07) & IntCtrl_ConfigParam[counter].interruptSubPriority;
+        #endif
+
+        /*TODO Configure Grouping\SubGrouping System in APINT register in SCB*/
+
+        APINT = 0xFA050000 | ((0X07 & PRIORITY_COMBINATION) << 8);
+        
+        /*TODO : Assign Group\Subgroup priority in NVIC_PRIx Nvic and SCB_SYSPRIx Registers*/  
 
 
-	/*TODO : Enable\Disable based on user configurations in NVIC_ENx and SCB_Sys Registers */
+        NVIC->PRI[IntCtrl_ConfigParam[counter].interruptName / 4U] |= priority << ( (8*(IntCtrl_ConfigParam[counter].interruptName % 4U)) + 5 );
 
+        /*TODO : Enable\Disable based on user configurations in NVIC_ENx and SCB_Sys Registers */
 
-	
-
+        NVIC->EN[IntCtrl_ConfigParam[counter].interruptName / 32U] |= (0x01 << ( IntCtrl_ConfigParam[counter].interruptName % 32U ));
+        
+    }
 }
 
 /**********************************************************************************************************************

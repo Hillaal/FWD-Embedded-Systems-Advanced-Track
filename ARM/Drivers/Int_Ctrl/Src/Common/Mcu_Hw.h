@@ -66,7 +66,8 @@ typedef struct{
 #define CORTEXM4_PERI_BASE_ADDRESS             0xE000E000
 #define APINT                                  *((volatile uint32*)(CORTEXM4_PERI_BASE_ADDRESS+0xD0C))
 #define INTCTRL                                *((volatile INTCTRL_Tag*)(CORTEXM4_PERI_BASE_ADDRESS+0xD04))
-#define NVIC                                    *((volatile NVIC_REGS*)(CORTEXM4_PERI_BASE_ADDRESS+0x100))
+#define NVIC                                    ((volatile NVIC_REGS*)(CORTEXM4_PERI_BASE_ADDRESS+0x100))
+
 
 
 
