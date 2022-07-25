@@ -70,6 +70,10 @@ typedef struct{
 
 
 
+
+#define RCGCGPIO        *((volatile uint32*)(0x400FE608)) 
+
+
 /******** GPIO Base address **********/
 #define GPIO_PORT_A      (0x40058000)
 #define GPIO_PORT_B      (0x40059000)
@@ -116,6 +120,8 @@ typedef struct{
 #define GPIOPCellID1        (0xFF4)
 #define GPIOPCellID2        (0xFF8)
 #define GPIOPCellID3        (0xFFC)
+
+
 
 
 
