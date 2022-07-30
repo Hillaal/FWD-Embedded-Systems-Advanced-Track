@@ -5,7 +5,7 @@
  *         File:  DIO.h
  *       Module:  DIO
  *
- *  Description:  header file for DIO Module    
+ *  Description:  header file for DIO Driver    
  *  
  *********************************************************************************************************************/
 #ifndef DIO_H
@@ -31,7 +31,7 @@
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
  
-
+void GPIO_EnableClock(DIO_PortType portID);
 
 /******************************************************************************
 * \Syntax          : DIO_LevelType Dio_ReadChannel(DIO_ChannelType channelID)                                     

@@ -5,7 +5,7 @@
  *         File:  Port_Cfg.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  header file for the user configurations of ports   
  *  
  *********************************************************************************************************************/
 #ifndef PORT_CFG_H
@@ -20,7 +20,7 @@
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
-#define NUM_OF_CHANNELS ((uint8) 5 )
+#define NUM_OF_CHANNELS ((uint8) 1)
 
 
 /**********************************************************************************************************************
@@ -35,11 +35,10 @@
 typedef struct
 {
     PORT_ChannelType channelID;
-    PORT_PinDirectionType direction;
     PORT_PinModeType mode;
+    PORT_PinDirectionType direction;
     PORT_PinInternalAttachType internalAttach;
     PORT_PinOutputCurrentType outputCurrent;
-
 
 }Port_ConfigType;
 

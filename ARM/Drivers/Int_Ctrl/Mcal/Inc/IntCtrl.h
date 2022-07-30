@@ -2,55 +2,44 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Port.h
- *       Module:  PORT
+ *         File:  IntCrtl.h
+ *       Module:  IntCrtl
  *
- *  Description:  header file for PORT Driver    
+ *  Description:  header file for IntCrtl Module    
  *  
  *********************************************************************************************************************/
-#ifndef PORT_H
-#define PORT_H
+#ifndef IntCrtl_H
+#define IntCrtl_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
 #include "Mcu_Hw.h"
 #include "Std_Types.h"
-#include "Port_Types.h"
-#include "Port_Cfg.h"
-
-
-/**********************************************************************************************************************
- *  GLOBAL FUNCTION MACROS
- *********************************************************************************************************************/
-
-#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
-
+#include "IntCtrl_Cfg.h"
+#include "IntCtrl_Types.h"
 
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
  
-
-
 /******************************************************************************
-* \Syntax          : void Port_Init(const Port_ConfigType* configPtr)                                   
-* \Description     : initialize configurations of GPIO pins                                                                                                        
+* \Syntax          : void IntCrtl_Init(void)                                      
+* \Description     : initialize Nvic\SCB Module by parsing the Configuration 
+*                    into Nvic\SCB registers                                    
+*                                                                             
 * \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Reentrant                                             
-* \Parameters (in) : const Port_ConfigType* configPtr                    
+* \Reentrancy      : Non Reentrant                                             
+* \Parameters (in) : None                     
 * \Parameters (out): None                                                      
 * \Return value:   : None
 *******************************************************************************/
 
-
-void Port_Init(void);
-
-
-
-#endif  /* PORT_H */
+void IntCrtl_Init(void);
+ 
+#endif  /* IntCrtl_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: PORT.h
+ *  END OF FILE: IntCrtl.h
  *********************************************************************************************************************/

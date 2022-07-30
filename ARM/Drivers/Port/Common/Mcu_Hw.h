@@ -69,9 +69,10 @@ typedef struct{
 
 
 
-
-
+/******** SYSTEM CONTROL REGISTERS **********/
 #define RCGCGPIO        *((volatile uint32*)(0x400FE608)) 
+#define RCGCTIMER       *((volatile uint32*)(0x400FE604)) 
+#define RCGCWTIMER      *((volatile uint32*)(0x400FE65C))
 
 
 /******** GPIO Base address **********/
@@ -84,7 +85,7 @@ typedef struct{
 
 
 /********** REG offsets ********/
-#define GPIODATA            (0x000)
+#define GPIODATA            (0x3FC)
 #define GPIODIR             (0x400)
 #define GPIOIS              (0x404)
 #define GPIOIBE             (0x408)
@@ -123,7 +124,51 @@ typedef struct{
 
 
 
+/******** TIMERS Base address **********/
+#define TIMER0  0x40030000
+#define TIMER1  0x40031000
+#define TIMER2  0x40032000
+#define TIMER3  0x40033000
+#define TIMER4  0x40034000
+#define TIMER5  0x40035000
 
+#define TIMER0_WIDE  0x40036000
+#define TIMER1_WIDE  0x40037000
+#define TIMER2_WIDE  0x4004C000
+#define TIMER3_WIDE  0x4004D000
+#define TIMER4_WIDE  0x4004E000
+#define TIMER5_WIDE  0x4004F000
+
+
+/******** TIMERS REGISTERS offsets **********/
+
+#define GPTMCFG         (0x000)
+#define GPTMTAMR        (0x004)
+#define GPTMTBMR        (0x008)
+#define GPTMCTL         (0x00C)
+#define GPTMSYNC        (0x010)
+#define GPTMIMR         (0x018)
+#define GPTMRIS         (0x01C)
+#define GPTMMIS         (0x020)
+#define GPTMICR         (0x024)
+#define GPTMTAILR       (0x028)
+#define GPTMTBILR       (0x02C)
+#define GPTMTAMATCHR    (0x030)
+#define GPTMTBMATCHR    (0x034)
+#define GPTMTAPR        (0x038)
+#define GPTMTBPR        (0x03C)
+#define GPTMTAPMR       (0x040)
+#define GPTMTBPMR       (0x044)
+#define GPTMTAR         (0x048)
+#define GPTMTBR         (0x04C)
+#define GPTMTAV         (0x050)
+#define GPTMTBV         (0x054)
+#define GPTMRTCPD       (0x058)
+#define GPTMTAPS        (0x05C)
+#define GPTMTBPS        (0x060)
+#define GPTMTAPV        (0x064)
+#define GPTMTBPV        (0x068)
+#define GPTMPP          (0xFC0)
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES

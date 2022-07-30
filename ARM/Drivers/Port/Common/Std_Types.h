@@ -31,6 +31,11 @@
 # define STD_ACTIVE   1u /* Logical state active */
 # define STD_IDLE     0u /* Logical state idle */
 
+
+# define STD_ENABLE     1u /* Logical state ENABLE */
+# define STD_DISABLE    0u /* Logical state DISABLE */
+
+
 # define STD_ON       1u
 # define STD_OFF      0u
 

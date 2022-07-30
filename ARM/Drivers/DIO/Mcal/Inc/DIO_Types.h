@@ -5,7 +5,7 @@
  *         File:  Dio_Types.h
  *       Module:  -
  *
- *  Description:  <Write File DESCRIPTION here>     
+ *  Description:  contain Types related to the DIO driver       
  *  
  *********************************************************************************************************************/
 #ifndef DIO_TYPES_H
@@ -20,7 +20,6 @@
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
-#define DIO_PortLevelType   uint8
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -32,12 +31,13 @@
  *********************************************************************************************************************/
 
 
+typedef uint8   DIO_PortLevelType;
 
 
 
 typedef enum
 {
-    DIO_CHANNEL_A0,     //0
+    DIO_CHANNEL_A0 = 0,     //0
     DIO_CHANNEL_A1,
     DIO_CHANNEL_A2,
     DIO_CHANNEL_A3,
@@ -85,8 +85,8 @@ typedef enum
     DIO_CHANNEL_F2,
     DIO_CHANNEL_F3,
     DIO_CHANNEL_F4
-
 }DIO_ChannelType;
+
 
 
 

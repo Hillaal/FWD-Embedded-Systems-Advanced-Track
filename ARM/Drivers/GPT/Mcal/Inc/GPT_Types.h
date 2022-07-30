@@ -2,14 +2,14 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Port_Types.h
+ *         File:  GPT_Types.h
  *       Module:  -
  *
- *  Description:  contain Types related to the Interrupt PORT driver      
+ *  Description:  contain Types related to the GPT driver      
  *  
  *********************************************************************************************************************/
-#ifndef PORT_TYPES_H
-#define PORT_TYPES_H
+#ifndef GPT_TYPES_H
+#define GPT_TYPES_H
 
 /**********************************************************************************************************************
  * INCLUDES
@@ -19,8 +19,17 @@
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
+#define GPT_PREDEF_TIMER_1US_16BIT (0)
+#define GPT_PREDEF_TIMER_1US_24BIT (1)
+#define GPT_PREDEF_TIMER_1US_32BIT (2)
+#define GPT_PREDEF_TIMER_100US_32BIT (3)
 
-#define LOCK    0x4C4F434B
+
+#define TICK_FREQ_16_MHZ  (1U)
+#define TICK_FREQ_8_MHZ   (2U)
+#define TICK_FREQ_4_MHZ   (4U)
+#define TICK_FREQ_2_MHZ   (8U)
+#define TICK_FREQ_1_MHZ   (16U)
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -33,101 +42,40 @@
 
 
 
+typedef uint32  GPT_ValueType;
 
 typedef enum
 {
-    PORT_CHANNEL_A0,     //0
-    PORT_CHANNEL_A1,
-    PORT_CHANNEL_A2,
-    PORT_CHANNEL_A3,
-    PORT_CHANNEL_A4,
-    PORT_CHANNEL_A5,
-    PORT_CHANNEL_A6,
-    PORT_CHANNEL_A7,
-
-    PORT_CHANNEL_B0,     //8
-    PORT_CHANNEL_B1,
-    PORT_CHANNEL_B2,
-    PORT_CHANNEL_B3,
-    PORT_CHANNEL_B4,
-    PORT_CHANNEL_B5,
-    PORT_CHANNEL_B6,
-    PORT_CHANNEL_B7,
-
-    PORT_CHANNEL_C0,     //16
-    PORT_CHANNEL_C1,
-    PORT_CHANNEL_C2,
-    PORT_CHANNEL_C3,
-    PORT_CHANNEL_C4,
-    PORT_CHANNEL_C5,
-    PORT_CHANNEL_C6,
-    PORT_CHANNEL_C7,
-
-    PORT_CHANNEL_D0,     //24
-    PORT_CHANNEL_D1,
-    PORT_CHANNEL_D2,
-    PORT_CHANNEL_D3,
-    PORT_CHANNEL_D4,
-    PORT_CHANNEL_D5,
-    PORT_CHANNEL_D6,
-    PORT_CHANNEL_D7,
-
-    PORT_CHANNEL_E0,     //32
-    PORT_CHANNEL_E1,
-    PORT_CHANNEL_E2,
-    PORT_CHANNEL_E3,
-    PORT_CHANNEL_E4,
-    PORT_CHANNEL_E5,
-
-    PORT_CHANNEL_F0 = 40,     //38
-    PORT_CHANNEL_F1,
-    PORT_CHANNEL_F2,
-    PORT_CHANNEL_F3,
-    PORT_CHANNEL_F4
-
-}PORT_ChannelType;
-
-
-
-typedef enum 
-{
-    PORT_PIN_DIRECTION_INPUT = 0,
-    PORT_PIN_DIRECTION_OUTPUT = 1
-
-}PORT_PinDirectionType;
+    GPT_TIMER0,
+    GPT_TIMER1,
+    GPT_TIMER2,
+    GPT_TIMER3,
+    GPT_TIMER4,
+    GPT_TIMER5,
+    GPT_TIMER0_WIDE,
+    GPT_TIMER1_WIDE,
+    GPT_TIMER2_WIDE,
+    GPT_TIMER3_WIDE,
+    GPT_TIMER4_WIDE,
+    GPT_TIMER5_WIDE
+    
+}GPT_ChannelType;
 
 
 
 typedef enum
 {
- PORT_PIN_MODE_DIO = 0,
+    GPT_CH_MODE_ONESHOT = 1,
+    GPT_CH_MODE_CONTINUOUS = 2,
+    GPT_CH_MODE_CAPTURE = 3
+    
+}GPT_ModeType;
 
-
-}PORT_PinModeType;
-
-
-typedef enum
-{
-    PORT_INTERNAL_ATTACH_PULLUP = 0,
-    PORT_INTERNAL_ATTACH_PULLDOWN = 1,
-    PORT_INTERNAL_ATTACH_OPENDRAIN = 2,
-    PORT_INTERNAL_ATTACH_PUSHPULL = 3
-}PORT_PinInternalAttachType;
-
-
-
-typedef enum
-{   
-    PORT_PIN_OUTPUT_CURRENT_2MA = 0,
-    PORT_PIN_OUTPUT_CURRENT_4MA = 1,
-    PORT_PIN_OUTPUT_CURRENT_8MA = 2
- 
-}PORT_PinOutputCurrentType;
 
 
  
-#endif  /* PORT_TYPES_H */
+#endif  /* GPT_TYPES_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: PORT_Types.h
+ *  END OF FILE: GPT_Types.h
  *********************************************************************************************************************/

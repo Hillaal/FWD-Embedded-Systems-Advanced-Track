@@ -2,10 +2,9 @@
  *  FILE DESCRIPTION
  *  -----------------------------------------------------------------------------------------------------------------*/
 /**        \file  DIO.c
- *        \brief  Nested Vector Interrupt Controller Driver
+ *        \brief  DIO driver
  *
- *      \details  The Driver Configure All MCU interrupts Priority into gorups and subgroups
- *                Enable NVIC Interrupt Gate for Peripherals
+ *      \details  The Driver Configure All DIO pins write/read/flip channels
  *
  *********************************************************************************************************************/
 
@@ -23,7 +22,7 @@
  *  LOCAL DATA 
  *********************************************************************************************************************/
 
-static uint32 GPIO_baseAddress[6] = {GPIO_PORT_A,GPIO_PORT_B,GPIO_PORT_C,GPIO_PORT_D,GPIO_PORT_E,GPIO_PORT_F};
+static const uint32 GPIO_baseAddress[6] = {GPIO_PORT_A,GPIO_PORT_B,GPIO_PORT_C,GPIO_PORT_D,GPIO_PORT_E,GPIO_PORT_F};
 
 /**********************************************************************************************************************
  *  GLOBAL DATA
@@ -81,11 +80,12 @@ DIO_LevelType Dio_ReadChannel(DIO_ChannelType channelID){
 
 void Dio_WriteChannel(DIO_ChannelType channelID, DIO_LevelType level){
 
-    uint8 port_id = channelID / 8;
-    uint8 pin_id = channelID % 8;
+    uint32 port_id = ((uint32) channelID) / 8;
+    uint32 pin_id = ((uint32) channelID) % 8;
 
-    GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  level << pin_id;
-    
+    //GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (uint32)level << pin_id;
+	
+    GPIO_REG(GPIO_baseAddress[port_id], GPIODATA) =  1 << pin_id ;
 }
 
 
@@ -142,6 +142,8 @@ DIO_LevelType Dio_FlipChannel(DIO_ChannelType channelID){
     uint8 current_level = GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) );
     
     GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (1 ^ current_level) << pin_id;
+	
+		return ( (1 ^ current_level) << pin_id );
 }
 
 
