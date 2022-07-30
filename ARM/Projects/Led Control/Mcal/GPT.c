@@ -58,7 +58,7 @@ void GPT_Init(void)
 
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
 
-        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCFG) = 0x00000000;  // NO concatenation
+        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCFG) = 0x00000004;  // NO concatenation
 
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) &= ~(0x03);       // mode one shot or periodic
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) |= GPT_ConfigParam[counter].GptChannelMode;
