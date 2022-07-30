@@ -38,94 +38,7 @@ Config/Port_Lcfg.c(15): warning: In file included from...
                       ^
 2 warnings generated.
 compiling Port_Lcfg.c...
-Mcal/GPT.c(14): warning: In file included from...
-./Mcal/Inc\GPT.h(20): warning: In file included from...
-./Config\GPT_Cfg.h(43): warning: padding struct 'GPT_ConfigType' with 2 bytes to align 'GptChannelTickFrequency' [-Wpadded]
-  uint32 GptChannelTickFrequency;
-         ^
-Mcal/GPT.c(59): warning: // comments are not allowed in this language [-Wcomment]
-        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
-                                                                                                   ^
-Mcal/GPT.c(59): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
-                                                                                     ~~ ^~~~~~~~~
-Mcal/GPT.c(63): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) &= ~(0x03);       // mode one shot or periodic
-                                                                                      ~~ ^~~~~~~
-Mcal/GPT.c(77): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-    TIMER_REG(TIMERS_baseAddress[channel],GPTMIMR) &= ~(0x00010F1F);     //Disable all interrupts    
-                                                   ~~ ^~~~~~~~~~~~~
-Mcal/GPT.c(109): warning: no previous prototype for function 'TIMER0A_Handler' [-Wmissing-prototypes]
-TIMER0A_Handler(){
-^
-Mcal/GPT.c(109): note: declare 'static' if the function is not intended to be used outside of this translation unit
-TIMER0A_Handler(){
-^
-static 
-Mcal/GPT.c(109): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
-TIMER0A_Handler(){
-               ^
-Mcal/GPT.c(112): warning: non-void function does not return a value [-Wreturn-type]
-}
-^
-8 warnings generated.
-compiling GPT.c...
-Mcal/IntCtrl.c(79): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
-        NVIC->PRI[IntCtrl_ConfigParam[counter].interruptName / 4U] |= priority << ( (8*(IntCtrl_ConfigParam[counter].interruptName % 4U)) + 5 );
-                                                                   ~~ ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1 warning generated.
-compiling IntCtrl.c...
-Mcal/DIO.c(16): warning: In file included from...
-./Mcal/Inc\DIO.h(19): warning: In file included from...
-./Mcal/Inc/DIO_Types.h(40): warning: // comments are not allowed in this language [-Wcomment]
-    DIO_CHANNEL_A0 = 0,     //0
-                            ^
-Mcal/DIO.c(67): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'DIO_LevelType' [-Wimplicit-int-conversion]
-    return GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) );
-    ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
-#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
-                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mcal/DIO.c(87): warning: // comments are not allowed in this language [-Wcomment]
-    //GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (uint32)level << pin_id;
-    ^
-Mcal/DIO.c(82): warning: unused parameter 'level' [-Wunused-parameter]
-void Dio_WriteChannel(DIO_ChannelType channelID, DIO_LevelType level){
-                                                               ^
-Mcal/DIO.c(106): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'DIO_PortLevelType' (aka 'unsigned char') [-Wimplicit-int-conversion]
-    return GPIO_REG( GPIO_baseAddress[portID], GPIODATA + (255 <<2) );
-    ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
-#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
-                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mcal/DIO.c(143): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-    uint8 current_level = GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) );
-          ~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
-#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
-                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Mcal/DIO.c(145): warning: implicit conversion changes signedness: 'int' to 'uint32' (aka 'unsigned long') [-Wsign-conversion]
-    GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (1 ^ current_level) << pin_id;
-                                                                            ~  ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-Mcal/DIO.c(147): warning: implicit conversion loses integer precision: 'int' to 'DIO_LevelType' [-Wimplicit-int-conversion]
-                return ( (1 ^ current_level) << pin_id );
-                ~~~~~~   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
-8 warnings generated.
-compiling DIO.c...
 compiling IntCtrl_Lcfg.c...
-Mcal/Port.c(15): warning: In file included from...
-./Mcal/Inc\Port.h(19): warning: In file included from...
-./Mcal/Inc/Port_Types.h(39): warning: // comments are not allowed in this language [-Wcomment]
-    PORT_CHANNEL_A0,     //0
-                         ^
-./Mcal/Inc/Port_Types.h(103): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
- PORT_PIN_MODE_DIO = 0,
-                      ^
-Mcal/Port.c(65): warning: // comments are not allowed in this language [-Wcomment]
-                GPIO_REG(GPIO_baseAddress[port_id],GPIODEN) &= ~(1U << pin_id); //clear Pin before inserting value
-                                                                                ^
-3 warnings generated.
-compiling Port.c...
 Appl/main.c(2): warning: In file included from...
 ./Mcal/Inc\Port.h(19): warning: In file included from...
 ./Mcal/Inc/Port_Types.h(39): warning: // comments are not allowed in this language [-Wcomment]
@@ -146,6 +59,132 @@ Appl/main.c(4): warning: In file included from...
          ^
 4 warnings generated.
 compiling main.c...
+Mcal/Port.c(14): warning: In file included from...
+./Mcal/Inc\Port.h(19): warning: In file included from...
+./Mcal/Inc/Port_Types.h(39): warning: // comments are not allowed in this language [-Wcomment]
+    PORT_CHANNEL_A0,     //0
+                         ^
+./Mcal/Inc/Port_Types.h(103): warning: commas at the end of enumerator lists are a C99-specific feature [-Wc99-extensions]
+ PORT_PIN_MODE_DIO = 0,
+                      ^
+Mcal/Port.c(64): warning: // comments are not allowed in this language [-Wcomment]
+                GPIO_REG(GPIO_baseAddress[port_id],GPIODEN) &= ~(1U << pin_id); //clear Pin before inserting value
+                                                                                ^
+3 warnings generated.
+compiling Port.c...
+Mcal/IntCtrl.c(79): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        NVIC->PRI[IntCtrl_ConfigParam[counter].interruptName / 4U] |= priority << ( (8*(IntCtrl_ConfigParam[counter].interruptName % 4U)) + 5 );
+                                                                   ~~ ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling IntCtrl.c...
+Mcal/DIO.c(15): warning: In file included from...
+./Mcal/Inc\DIO.h(19): warning: In file included from...
+./Mcal/Inc/DIO_Types.h(40): warning: // comments are not allowed in this language [-Wcomment]
+    DIO_CHANNEL_A0 = 0,     //0
+                            ^
+Mcal/DIO.c(66): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'DIO_LevelType' [-Wimplicit-int-conversion]
+    return GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) );
+    ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
+#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mcal/DIO.c(86): warning: // comments are not allowed in this language [-Wcomment]
+    //GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (uint32)level << pin_id;
+    ^
+Mcal/DIO.c(81): warning: unused parameter 'level' [-Wunused-parameter]
+void Dio_WriteChannel(DIO_ChannelType channelID, DIO_LevelType level){
+                                                               ^
+Mcal/DIO.c(105): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'DIO_PortLevelType' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    return GPIO_REG( GPIO_baseAddress[portID], GPIODATA + (255 <<2) );
+    ~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
+#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mcal/DIO.c(142): warning: implicit conversion loses integer precision: 'volatile uint32' (aka 'volatile unsigned long') to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+    uint8 current_level = GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) );
+          ~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./Mcal/Inc\DIO.h(26): note: expanded from macro 'GPIO_REG'
+#define GPIO_REG(GPIO_BASE,REG_OFF)       *((volatile uint32*)(GPIO_BASE + REG_OFF))
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mcal/DIO.c(144): warning: implicit conversion changes signedness: 'int' to 'uint32' (aka 'unsigned long') [-Wsign-conversion]
+    GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (1 ^ current_level) << pin_id;
+                                                                            ~  ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+Mcal/DIO.c(146): warning: implicit conversion loses integer precision: 'int' to 'DIO_LevelType' [-Wimplicit-int-conversion]
+                return ( (1 ^ current_level) << pin_id );
+                ~~~~~~   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+8 warnings generated.
+compiling DIO.c...
+Mcal/GPT.c(14): warning: In file included from...
+./Mcal/Inc\GPT.h(20): warning: In file included from...
+./Config\GPT_Cfg.h(43): warning: padding struct 'GPT_ConfigType' with 2 bytes to align 'GptChannelTickFrequency' [-Wpadded]
+  uint32 GptChannelTickFrequency;
+         ^
+Mcal/GPT.c(59): warning: // comments are not allowed in this language [-Wcomment]
+        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
+                                                                                                   ^
+Mcal/GPT.c(59): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
+                                                                                     ~~ ^~~~~~~~~
+Mcal/GPT.c(63): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) &= ~(0x03);       // mode one shot or periodic
+                                                                                      ~~ ^~~~~~~
+Mcal/GPT.c(89): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+    TIMER_REG(TIMERS_baseAddress[channel],GPTMIMR) &= ~(0x00010F1F);     //Disable all interrupts    
+                                                   ~~ ^~~~~~~~~~~~~
+Mcal/GPT.c(191): warning: no previous prototype for function 'TIMER0A_Handler' [-Wmissing-prototypes]
+TIMER0A_Handler(){
+^
+Mcal/GPT.c(191): note: declare 'static' if the function is not intended to be used outside of this translation unit
+TIMER0A_Handler(){
+^
+static 
+Mcal/GPT.c(191): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+TIMER0A_Handler(){
+               ^
+Mcal/GPT.c(196): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+Mcal/GPT.c(199): warning: no previous prototype for function 'TIMER1A_Handler' [-Wmissing-prototypes]
+TIMER1A_Handler(){
+^
+Mcal/GPT.c(199): note: declare 'static' if the function is not intended to be used outside of this translation unit
+TIMER1A_Handler(){
+^
+static 
+Mcal/GPT.c(199): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+TIMER1A_Handler(){
+               ^
+Mcal/GPT.c(204): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+Mcal/GPT.c(206): warning: no previous prototype for function 'WTIMER0A_Handler' [-Wmissing-prototypes]
+WTIMER0A_Handler(){
+^
+Mcal/GPT.c(206): note: declare 'static' if the function is not intended to be used outside of this translation unit
+WTIMER0A_Handler(){
+^
+static 
+Mcal/GPT.c(206): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+WTIMER0A_Handler(){
+                ^
+Mcal/GPT.c(211): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+Mcal/GPT.c(213): warning: no previous prototype for function 'WTIMER1A_Handler' [-Wmissing-prototypes]
+WTIMER1A_Handler(){
+^
+Mcal/GPT.c(213): note: declare 'static' if the function is not intended to be used outside of this translation unit
+WTIMER1A_Handler(){
+^
+static 
+Mcal/GPT.c(213): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+WTIMER1A_Handler(){
+                ^
+Mcal/GPT.c(218): warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+17 warnings generated.
+compiling GPT.c...
 Config/GPT_Lcfg.c(15): warning: In file included from...
 ./Config\GPT_Cfg.h(43): warning: padding struct 'GPT_ConfigType' with 2 bytes to align 'GptChannelTickFrequency' [-Wpadded]
   uint32 GptChannelTickFrequency;
@@ -293,9 +332,9 @@ RTE/Device/TM4C123GH6PM/system_TM4C123.c(19): warning: // comments are not allow
 45 warnings generated.
 compiling system_TM4C123.c...
 linking...
-Program Size: Code=2000 RO-data=768 RW-data=4 ZI-data=608  
+Program Size: Code=2116 RO-data=768 RW-data=4 ZI-data=608  
 FromELF: creating hex file...
-".\Objects\Led_Controllrer.axf" - 0 Error(s), 72 Warning(s).
+".\Objects\Led_Controllrer.axf" - 0 Error(s), 81 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -321,10 +360,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.1
+      Source file:   Device/Source/system_TM4C123.c
       Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/ARM/startup_TM4C123.s
-      Source file:   Device/Source/system_TM4C123.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

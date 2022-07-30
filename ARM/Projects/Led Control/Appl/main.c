@@ -16,7 +16,7 @@ int main() {
   IntCrtl_Init();
 	Port_Init();
 	GPT_Init();
-  GPT_EnableNotification(GPT_TIMER1_WIDE);
+  GPT_EnableNotification(GPT_TIMER0);
   Blink_LED();
 
   while (1) {
@@ -32,12 +32,12 @@ void Blink_LED(void)
 		if(1 == LED_status ){
 				LED_status = 0;
 				Dio_WriteChannel(DIO_CHANNEL_F2,DIO_HIGH);
-				GPT_StartTimer(GPT_TIMER1_WIDE, HIGH_TIME * 1000000);
+				GPT_StartTimer(GPT_TIMER0, HIGH_TIME * 1000000);
 		}
 		else{
-			LED_status = 0;
+			LED_status = 1;
 			Dio_WriteChannel(DIO_CHANNEL_F2,DIO_LOW);
-			GPT_StartTimer(GPT_TIMER1_WIDE, LOW_TIME * 1000000);
+			GPT_StartTimer(GPT_TIMER0, LOW_TIME * 1000000);
 		}
 		
 }

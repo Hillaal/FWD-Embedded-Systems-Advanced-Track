@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Led_Controllrer.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Led_Controllrer.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Jul 30 10:00:47 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Sat Jul 30 11:51:56 2022
 <BR><P>
-<H3>Maximum Stack Usage =         36 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         44 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Blink_LED &rArr; Dio_WriteChannel
 <P>
@@ -47,7 +47,6 @@ Mutually Recursive functions
  <LI><a href="#[1b]">ADC0SS3_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1b]">ADC0SS3_Handler</a><BR>
  <LI><a href="#[1c]">WDT0_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1c]">WDT0_Handler</a><BR>
  <LI><a href="#[1e]">TIMER0B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1e]">TIMER0B_Handler</a><BR>
- <LI><a href="#[1f]">TIMER1A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1f]">TIMER1A_Handler</a><BR>
  <LI><a href="#[20]">TIMER1B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[20]">TIMER1B_Handler</a><BR>
  <LI><a href="#[21]">TIMER2A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[21]">TIMER2A_Handler</a><BR>
  <LI><a href="#[22]">TIMER2B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[22]">TIMER2B_Handler</a><BR>
@@ -93,9 +92,7 @@ Mutually Recursive functions
  <LI><a href="#[4a]">TIMER4B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4a]">TIMER4B_Handler</a><BR>
  <LI><a href="#[4b]">TIMER5A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4b]">TIMER5A_Handler</a><BR>
  <LI><a href="#[4c]">TIMER5B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4c]">TIMER5B_Handler</a><BR>
- <LI><a href="#[4d]">WTIMER0A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4d]">WTIMER0A_Handler</a><BR>
  <LI><a href="#[4e]">WTIMER0B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4e]">WTIMER0B_Handler</a><BR>
- <LI><a href="#[4f]">WTIMER1A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[4f]">WTIMER1A_Handler</a><BR>
  <LI><a href="#[50]">WTIMER1B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[50]">WTIMER1B_Handler</a><BR>
  <LI><a href="#[51]">WTIMER2A_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[51]">WTIMER2A_Handler</a><BR>
  <LI><a href="#[52]">WTIMER2B_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[52]">WTIMER2B_Handler</a><BR>
@@ -223,7 +220,7 @@ Function Pointers
  <LI><a href="#[76]">SystemInit</a> from system_tm4c123.o(.text.SystemInit) referenced from startup_tm4c123.o(.text)
  <LI><a href="#[1d]">TIMER0A_Handler</a> from gpt.o(.text.TIMER0A_Handler) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[1e]">TIMER0B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[1f]">TIMER1A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
+ <LI><a href="#[1f]">TIMER1A_Handler</a> from gpt.o(.text.TIMER1A_Handler) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[20]">TIMER1B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[21]">TIMER2A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[22]">TIMER2B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -246,9 +243,9 @@ Function Pointers
  <LI><a href="#[35]">USB0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[5]">UsageFault_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[1c]">WDT0_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[4d]">WTIMER0A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
+ <LI><a href="#[4d]">WTIMER0A_Handler</a> from gpt.o(.text.WTIMER0A_Handler) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[4e]">WTIMER0B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
- <LI><a href="#[4f]">WTIMER1A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
+ <LI><a href="#[4f]">WTIMER1A_Handler</a> from gpt.o(.text.WTIMER1A_Handler) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[50]">WTIMER1B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[51]">WTIMER2A_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
  <LI><a href="#[52]">WTIMER2B_Handler</a> from startup_tm4c123.o(.text) referenced from startup_tm4c123.o(RESET)
@@ -380,7 +377,7 @@ Global Symbols
 <P><STRONG><a name="[b4]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[84]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 44 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Blink_LED &rArr; Dio_WriteChannel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -606,13 +603,6 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0B_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0B_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
-</UL>
-<P><STRONG><a name="[1f]"></a>TIMER1A_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1A_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1A_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
@@ -931,24 +921,10 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[4d]"></a>WTIMER0A_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER0A_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER0A_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
-</UL>
 <P><STRONG><a name="[4e]"></a>WTIMER0B_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER0B_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER0B_Handler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
-</UL>
-<P><STRONG><a name="[4f]"></a>WTIMER1A_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, startup_tm4c123.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER1A_Handler
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WTIMER1A_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
@@ -1265,8 +1241,8 @@ Global Symbols
 
 <P><STRONG><a name="[be]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[8d]"></a>Blink_LED</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, main.o(.text.Blink_LED))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = Blink_LED &rArr; Dio_WriteChannel
+<P><STRONG><a name="[8d]"></a>Blink_LED</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, main.o(.text.Blink_LED))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Blink_LED &rArr; Dio_WriteChannel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPT_StartTimer
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dio_WriteChannel
@@ -1287,8 +1263,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[92]"></a>GPT_Init</STRONG> (Thumb, 324 bytes, Stack size 8 bytes, gpt.o(.text.GPT_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPT_Init
+<P><STRONG><a name="[92]"></a>GPT_Init</STRONG> (Thumb, 296 bytes, Stack size 4 bytes, gpt.o(.text.GPT_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = GPT_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1314,13 +1290,28 @@ Global Symbols
 <P><STRONG><a name="[76]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, system_tm4c123.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(.text)
 </UL>
-<P><STRONG><a name="[1d]"></a>TIMER0A_Handler</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, gpt.o(.text.TIMER0A_Handler))
+<P><STRONG><a name="[1d]"></a>TIMER0A_Handler</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gpt.o(.text.TIMER0A_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIMER0A_Handler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[85]"></a>main</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = main &rArr; Blink_LED &rArr; Dio_WriteChannel
+<P><STRONG><a name="[1f]"></a>TIMER1A_Handler</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gpt.o(.text.TIMER1A_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIMER1A_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
+</UL>
+<P><STRONG><a name="[4d]"></a>WTIMER0A_Handler</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gpt.o(.text.WTIMER0A_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = WTIMER0A_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
+</UL>
+<P><STRONG><a name="[4f]"></a>WTIMER1A_Handler</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, gpt.o(.text.WTIMER1A_Handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = WTIMER1A_Handler
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
+</UL>
+<P><STRONG><a name="[85]"></a>main</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = main &rArr; Blink_LED &rArr; Dio_WriteChannel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_LED
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPT_EnableNotification
@@ -1332,7 +1323,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[78]"></a>notify</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, main.o(.text.notify))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = notify &rArr; Blink_LED &rArr; Dio_WriteChannel
+<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = notify &rArr; Blink_LED &rArr; Dio_WriteChannel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Blink_LED
 </UL>

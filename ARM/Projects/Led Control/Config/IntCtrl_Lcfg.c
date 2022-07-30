@@ -29,7 +29,7 @@
 const IntCtrl_ConfigType IntCtrl_ConfigParam[NUM_OF_INTERRUPTS] =
  {
     {/*Interrupt-0*/
-     INT_CTRL_32_64_BIT_TIMER_1A,
+     INT_CTRL_16_32_BIT_TIMER_0A,
      1,
      0
     }

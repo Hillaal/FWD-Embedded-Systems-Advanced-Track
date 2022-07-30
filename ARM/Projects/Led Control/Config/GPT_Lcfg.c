@@ -29,7 +29,7 @@
 const GPT_ConfigType GPT_ConfigParam[NUM_OF_TIMERS] =
  {
     {
-     GPT_TIMER1_WIDE,
+     GPT_TIMER0,
      GPT_CH_MODE_CONTINUOUS,
      TICK_FREQ_1_MHZ,
      notify
