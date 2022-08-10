@@ -17,8 +17,6 @@ int main() {
 	Port_Init();
 	GPT_Init();
   GPT_EnableNotification(GPT_TIMER1);
-	Dio_WriteChannel(DIO_CHANNEL_F2,DIO_HIGH);
-	Dio_WriteChannel(DIO_CHANNEL_F2,DIO_LOW);
 	Blink_LED();
 	
   while (1) {

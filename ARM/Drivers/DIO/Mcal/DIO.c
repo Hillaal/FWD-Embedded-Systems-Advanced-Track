@@ -85,7 +85,7 @@ void Dio_WriteChannel(DIO_ChannelType channelID, DIO_LevelType level){
 
     //GPIO_REG( GPIO_baseAddress[port_id], GPIODATA + ( 1 << (2 + pin_id) ) ) =  (uint32)level << pin_id;
 	
-    GPIO_REG(GPIO_baseAddress[port_id], GPIODATA) =  1 << pin_id ;
+    GPIO_REG(GPIO_baseAddress[port_id], GPIODATA) =  (uint32)level << pin_id ;
 }
 
 
