@@ -1,3 +1,9 @@
-./objects/port.o: Mcal\Port.c Mcal\Inc\Port.h Common\Mcu_Hw.h \
-  Common\Std_Types.h Common\Platform_Types.h Common\Compiler.h \
-  Mcal\Inc\Port_Types.h Config\Port_Cfg.h
+.\objects\port.o: Mcal\Port.c
+.\objects\port.o: .\Mcal\Inc\Port.h
+.\objects\port.o: .\Common\Mcu_Hw.h
+.\objects\port.o: .\Common\Std_Types.h
+.\objects\port.o: .\Common\Platform_Types.h
+.\objects\port.o: .\Common\Compiler.h
+.\objects\port.o: .\Mcal\Inc\Port_Types.h
+.\objects\port.o: .\Config\Port_Cfg.h
+.\objects\port.o: .\Mcal\Inc\Port.h

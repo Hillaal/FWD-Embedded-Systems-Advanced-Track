@@ -50,15 +50,17 @@ void GPT_Init(void)
 
         if (GPT_ConfigParam[counter].GptChannelId < 6){
             RCGCTIMER |= (1 << timerID);
+						while(!(RCGCTIMER & (1 << timerID))){}
         }
 
         else{
             RCGCWTIMER |= (1<<timerID);
+						while(!(RCGCWTIMER & (1 << timerID))){}
         }
 
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCTL) &= ~(1 << 0); //disable Timer A
 
-        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCFG) = 0x00000004;  // NO concatenation
+        TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMCFG) = 0x00000000;  // NO concatenation
 
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) &= ~(0x03);       // mode one shot or periodic
         TIMER_REG(TIMERS_baseAddress[GPT_ConfigParam[counter].GptChannelId],GPTMTAMR) |= GPT_ConfigParam[counter].GptChannelMode;
@@ -199,7 +201,7 @@ TIMER0A_Handler(){
 TIMER1A_Handler(){
 
 	TIMER_REG(TIMERS_baseAddress[1],GPTMICR) |= (1<<0);   //clearFlag of timer A
-    GPT_ConfigParam[0].GptNotification();       //call the callback function
+    GPT_ConfigParam[0].GptNotification();   //call the callback function
 
 }
 

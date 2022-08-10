@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Led_Controllrer' 
+ * Project: 'Led Controller' 
  * Target:  'Target 1' 
  */
 

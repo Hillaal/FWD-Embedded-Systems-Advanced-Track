@@ -1,6 +1,19 @@
-./objects/main.o: Appl\main.c Mcal\Inc\IntCtrl.h Common\Mcu_Hw.h \
-  Common\Std_Types.h Common\Platform_Types.h Common\Compiler.h \
-  Config\IntCtrl_Cfg.h Mcal\Inc\IntCtrl_Types.h Mcal\Inc\Port.h \
-  Mcal\Inc\Port_Types.h Config\Port_Cfg.h Mcal\Inc\DIO.h \
-  Mcal\Inc\DIO_Types.h Mcal\Inc\GPT.h Mcal\Inc\GPT_Types.h \
-  Config\GPT_Cfg.h
+.\objects\main.o: Appl\main.c
+.\objects\main.o: .\Mcal\Inc\IntCtrl.h
+.\objects\main.o: .\Common\Mcu_Hw.h
+.\objects\main.o: .\Common\Std_Types.h
+.\objects\main.o: .\Common\Platform_Types.h
+.\objects\main.o: .\Common\Compiler.h
+.\objects\main.o: .\Config\IntCtrl_Cfg.h
+.\objects\main.o: .\Mcal\Inc\IntCtrl.h
+.\objects\main.o: .\Mcal\Inc\IntCtrl_Types.h
+.\objects\main.o: .\Mcal\Inc\Port.h
+.\objects\main.o: .\Mcal\Inc\Port_Types.h
+.\objects\main.o: .\Config\Port_Cfg.h
+.\objects\main.o: .\Mcal\Inc\Port.h
+.\objects\main.o: .\Mcal\Inc\DIO.h
+.\objects\main.o: .\Mcal\Inc\DIO_Types.h
+.\objects\main.o: .\Mcal\Inc\GPT.h
+.\objects\main.o: .\Mcal\Inc\GPT_Types.h
+.\objects\main.o: .\Config\GPT_Cfg.h
+.\objects\main.o: .\Mcal\Inc\GPT.h

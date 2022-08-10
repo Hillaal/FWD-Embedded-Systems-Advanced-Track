@@ -1,3 +1,9 @@
-./objects/intctrl.o: Mcal\IntCtrl.c Common\Std_Types.h \
-  Common\Platform_Types.h Common\Compiler.h Mcal\Inc\IntCtrl.h \
-  Common\Mcu_Hw.h Config\IntCtrl_Cfg.h Mcal\Inc\IntCtrl_Types.h
+.\objects\intctrl.o: Mcal\IntCtrl.c
+.\objects\intctrl.o: .\Common\Std_Types.h
+.\objects\intctrl.o: .\Common\Platform_Types.h
+.\objects\intctrl.o: .\Common\Compiler.h
+.\objects\intctrl.o: .\Mcal\Inc\IntCtrl.h
+.\objects\intctrl.o: .\Common\Mcu_Hw.h
+.\objects\intctrl.o: .\Config\IntCtrl_Cfg.h
+.\objects\intctrl.o: .\Mcal\Inc\IntCtrl.h
+.\objects\intctrl.o: .\Mcal\Inc\IntCtrl_Types.h

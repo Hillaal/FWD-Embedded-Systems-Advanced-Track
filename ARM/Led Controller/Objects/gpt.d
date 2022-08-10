@@ -1,3 +1,9 @@
-./objects/gpt.o: Mcal\GPT.c Mcal\Inc\GPT.h Common\Mcu_Hw.h \
-  Common\Std_Types.h Common\Platform_Types.h Common\Compiler.h \
-  Mcal\Inc\GPT_Types.h Config\GPT_Cfg.h
+.\objects\gpt.o: Mcal\GPT.c
+.\objects\gpt.o: .\Mcal\Inc\GPT.h
+.\objects\gpt.o: .\Common\Mcu_Hw.h
+.\objects\gpt.o: .\Common\Std_Types.h
+.\objects\gpt.o: .\Common\Platform_Types.h
+.\objects\gpt.o: .\Common\Compiler.h
+.\objects\gpt.o: .\Mcal\Inc\GPT_Types.h
+.\objects\gpt.o: .\Config\GPT_Cfg.h
+.\objects\gpt.o: .\Mcal\Inc\GPT.h

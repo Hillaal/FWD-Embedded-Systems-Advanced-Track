@@ -51,7 +51,7 @@ void Port_Init(void){
 
         /* enable clock */
         RCGCGPIO |= ( 1U << port_id); 
-
+				while(!(RCGCGPIO & ( 1U << port_id))){}
         /*unlock the commit*/
         
         GPIO_REG(GPIO_baseAddress[port_id],GPIOLOCK) = LOCK;

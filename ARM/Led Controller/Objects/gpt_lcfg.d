@@ -1,3 +1,9 @@
-./objects/gpt_lcfg.o: Config\GPT_Lcfg.c Config\GPT_Cfg.h Mcal\Inc\GPT.h \
-  Common\Mcu_Hw.h Common\Std_Types.h Common\Platform_Types.h \
-  Common\Compiler.h Mcal\Inc\GPT_Types.h
+.\objects\gpt_lcfg.o: Config\GPT_Lcfg.c
+.\objects\gpt_lcfg.o: Config\GPT_Cfg.h
+.\objects\gpt_lcfg.o: .\Mcal\Inc\GPT.h
+.\objects\gpt_lcfg.o: .\Common\Mcu_Hw.h
+.\objects\gpt_lcfg.o: .\Common\Std_Types.h
+.\objects\gpt_lcfg.o: .\Common\Platform_Types.h
+.\objects\gpt_lcfg.o: .\Common\Compiler.h
+.\objects\gpt_lcfg.o: .\Mcal\Inc\GPT_Types.h
+.\objects\gpt_lcfg.o: .\Config\GPT_Cfg.h
