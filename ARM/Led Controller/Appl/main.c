@@ -4,8 +4,8 @@
 #include "GPT.h"
 
 
-#define HIGH_TIME 	(2U)
-#define LOW_TIME 	(1U)
+#define HIGH_TIME 	(5U)
+#define LOW_TIME 	(5U)
 
 
 void Blink_LED(void);
